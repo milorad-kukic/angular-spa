@@ -50,3 +50,10 @@ input[type="text"] {
     transform: rotate(360deg);
   }
 }
+
+.error {
+    clear: both;
+    color: red;
+}
+
+
