@@ -15,7 +15,6 @@ angular.module("NarrowItDownApp", [])
         ctrl.found = [];
 
         ctrl.removeItem = function(index) {
-            console.log('removeItem called....');
             ctrl.found.splice(index, 1);
         }
 
@@ -41,6 +40,9 @@ angular.module("NarrowItDownApp", [])
                 url: ("https://davids-restaurant.herokuapp.com/menu_items.json")
             }).then(function(result) {
                 var foundItems = [];
+                if (searchTerm.trim() === "") {
+                    return foundItems;
+                }
                 for (var i = 0; i < result.data["menu_items"].length; i++) {
                     var item = result.data["menu_items"][i];
 
