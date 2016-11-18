@@ -1,0 +1,18 @@
+<table class="table">
+    <thead class="">
+        <th>Dishes</th>
+    </thead>
+    <tr ng-repeat="item in $ctrl.items">
+        <td> 
+            <div class="item_name">
+                {{ item.name }} 
+                <span class="badge">{{item.price_small | currency : "€"}}</span>
+                <span class="badge">{{item.price_large | currency : "€"}}</span>
+            </div>
+            <div class="item_description">
+                {{ item.description }} 
+                <span ng-if="!item.description" class="no_description_message"> -- no description -- </span>
+            </div>
+        </td>
+    </tr>
+</table>

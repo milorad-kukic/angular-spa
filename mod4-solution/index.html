@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="MenuApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Angular SPA - module 4 solution</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" ui-sref="home">Milorad's Restaurant</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a ui-sref="home">Home</a></li>
+            <li><a ui-sref="categories">Dish Categories</a></li>
+            <li><a ui-sref="contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container pull-down">
+        
+    <div class="jumbotron">
+    <h2 class="main-title">Welcome to Milorad's restaurant<h2>
+        
+    </div>
+    <ui-view></ui-view>
+
+    <hr>
+    <footer>
+         &copy; Copyright by Milorad Kukic,
+             <script>
+                today = new Date();
+                document.write(today.getFullYear());
+            </script>
+            <noscript>2016</noscript>
+
+</script>
+
+    </footer>
+
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="lib/angular.min.js"></script>
+<script src="lib/angular-ui-router.min.js"></script>
+
+<!-- Definition of modules -->
+<script src="src/menu/menuapp.module.js"></script>
+<script src="src/menu/data.module.js"></script>
+
+<!-- Components -->
+<script src="src/menu/categories.component.js"></script>
+<script src="src/menu/items.component.js"></script>
+
+<!-- Services -->
+<script src="src/menu/menudata.service.js"></script>
+
+<!-- Controllers -->
+<script src="src/menu/categories.controller.js"></script>
+<script src="src/menu/items.controller.js"></script>
+
+<script src="src/routes.js"></script>
+</body>
+</html>

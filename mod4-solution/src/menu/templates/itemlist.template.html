@@ -1,0 +1,13 @@
+<a ui-sref="home">home</a> > 
+<a ui-sref="categories">dish categories</a> > 
+{{ itemList.category.name | lowercase }}
+
+
+<div id="items_content">
+    <h1>Dishes by category: {{ itemList.category.name }}</h1>
+
+<div id="items_table_holder">
+    <items items="itemList.items"></items>
+</div>
+
+</div>
