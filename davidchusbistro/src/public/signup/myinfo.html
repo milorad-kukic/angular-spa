@@ -1,0 +1,57 @@
+<div ng-if="myInfo.info.email"> 
+<div class="row row-content col-md-6"> 
+    <div class="col-xs-12">
+        <h1>Your Data</h1>
+        <br/>
+    </div>
+
+    <div class="col-xs-12 col-sm-9">
+        <table>
+            <tr>
+                <td>First Name: </td>
+                <td>{{ myInfo.info.first_name }}</td>
+            </tr>
+            <tr>
+                <td>Last Name: </td>
+                <td>{{ myInfo.info.last_name }}</td>
+            </tr>
+            <tr>
+                <td>email: </td>
+                <td>{{ myInfo.info.email }}</td>
+            </tr>
+            <tr>
+                <td>Phone Number: </td>
+                <td>{{ myInfo.info.phone_number }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class = "col-md-6" id="favorite_dish_div" >
+    <h1>Your favorite dish:</h1>
+
+    <div>  
+      <div class="row">
+        <div class="col-sm-5">
+          <div class="menu-item-photo">
+            <div>{{myInfo.favorite_dish.short_name}}</div>
+            <img class="img-responsive" width="250" height="150" ng-src="{{myInfo.basePath}}/images/{{myInfo.favorite_dish.short_name}}.jpg" alt="{{myInfo.favorite_dish.name}}">
+          </div>
+          <div class="menu-item-price">{{myInfo.favorite_dish.price_small | currency}}<span> {{myInfo.favorite_dish.small_portion_name}}</span> {{myInfo.favorite_dish.price_large | currency}} <span>{{myInfo.favorite_dish.large_portion_name}}</span></div>
+        </div>
+        <div class="menu-item-description col-sm-7">
+          <h3 class="menu-item-title">{{myInfo.favorite_dish.name}}</h3>
+          <p class="menu-item-details">{{myInfo.favorite_dish.description}}</p>
+        </div>
+      </div>
+      <hr class="visible-xs">
+    </div>
+    
+</div>
+
+<div style="clear: both"></div>
+</div>
+<div ng-if="!myInfo.info.email"> 
+    <h1>Not signed up yet</h1>
+    <a ui-sref="public.signup">Sign Up</a> now!
+</div>
